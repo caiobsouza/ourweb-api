@@ -1,0 +1,23 @@
+{
+  "name": "ourwed-api",
+  "version": "1.0.0",
+  "description": "our wedding api",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive test/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caiobsouza/ourweb-api.git"
+  },
+  "keywords": [
+    "wedding",
+    "api"
+  ],
+  "author": "caiobsouza",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/caiobsouza/ourweb-api/issues"
+  },
+  "homepage": "https://github.com/caiobsouza/ourweb-api#readme"
+}
