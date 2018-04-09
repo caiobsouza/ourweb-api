@@ -4,6 +4,8 @@
   "description": "our wedding api",
   "main": "index.js",
   "scripts": {
+    "start": "node index",
+    "live": "nodemon index",
     "test": "mocha --recursive test/**/*.js"
   },
   "repository": {
@@ -19,5 +21,14 @@
   "bugs": {
     "url": "https://github.com/caiobsouza/ourweb-api/issues"
   },
-  "homepage": "https://github.com/caiobsouza/ourweb-api#readme"
+  "homepage": "https://github.com/caiobsouza/ourweb-api#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.13"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3"
+  }
 }
