@@ -6,11 +6,12 @@
   "scripts": {
     "start": "node index",
     "live": "nodemon index",
-    "test": "mocha --recursive test/**/*.js"
+    "test": "jest --coverage",
+    "jest": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/caiobsouza/ourweb-api.git"
+    "url": "git+https://github.com/caiobsouza/ourwed-api.git"
   },
   "keywords": [
     "wedding",
@@ -19,16 +20,24 @@
   "author": "caiobsouza",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/caiobsouza/ourweb-api/issues"
+    "url": "https://github.com/caiobsouza/ourwed-api/issues"
   },
-  "homepage": "https://github.com/caiobsouza/ourweb-api#readme",
+  "homepage": "https://github.com/caiobsouza/ourwed-api#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "chai": "^4.1.2",
     "cors": "^2.8.4",
     "express": "^4.16.3",
-    "mongoose": "^5.0.13"
+    "mongoose": "^5.0.13",
+    "mongoose-dummy": "^1.0.2",
+    "rewiremock": "^3.7.1",
+    "sinon": "^4.5.0",
+    "supertest": "^3.0.0",
+    "winston": "^2.4.2"
   },
   "devDependencies": {
+    "jest": "^22.4.3",
+    "mocha": "^5.1.1",
     "nodemon": "^1.17.3"
   }
 }

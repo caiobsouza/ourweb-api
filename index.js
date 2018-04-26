@@ -1,17 +1,11 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const { json, urlencoded } = require("body-parser");
-const cors = require("cors");
-
-const PORT = process.env.PORT || 5001;
+const express = require('express');
+const winston = require('winston');
 
 const app = express();
 
-app.use(cors());
-app.use(json());
-app.use(urlencoded({ extended: false }));
+require('./src/middlewares')(app);
+require('./src/routes')(app);
 
-const base = require('./routes/base');
-app.use('/', base);
+const PORT = process.env.PORT || 5001;
 
-app.listen(PORT, () => console.log(`Listening at ${PORT}`));
+app.listen(PORT, () => winston.info(`Listening at ${PORT}`));

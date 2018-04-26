@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+- 8
+branches:
+  only:
+  - master
+notifications:
+  email: false
+deploy:
+  provider: heroku
+  app: our-wedding-api
+  on:
+    repo: caiobsouza/ourwed-api
+    branch: master
+  api_key:
+    secure: pPv2NGjLocmLNMxGuz7tB4PB5+Qi0QwqgqGnOJ8oBVEPm7pLnSkBJSQQE1Qnklbo5hGZEV912MOBg3il+Fr5nPZtW2dA9aFUK9r1lcrXJltcJoPczJEt9+d+CilVRGO1VzdV8oLME9vGP3gEAGI9t24uRJSxocz7GngdcSWAhFfASWHI3bMA4B9fu6X88Pm/d/7xTqkOyZ2QRgDLqN2rdVfdR1I6B8B4UD/V0WiEp/Z7s4CIiD+zkwM1MLEofyeHKfkaWBcu5o73ZheRIFoQcc8Vmgu70ctsKT1ZUI6BAjMK4TAB0Mb4irHMgQpFhsQ8ANrOl5KSxcQLXG979CY6RPBGYVZgqbuLeSdhNYdFQrLuvO7Tn+8ReHoTzNNrGkwyXR0rNMPB+lG8KBMySnHQMx15+zhI96jzpXrN+Sjl5+mim7QlRc8rMeOWXzvXEiXTXPLFB4MrgfF9sshrkAgCsOPzdpfJdnqdkaCSJe4Ep0tIwf1MDcFAl5C7/bVrn3HxDOMyuOXmEi0lZHI7oBODTbjqoGtDM6+WZ0GC4vU5Y6C2x0ju79tp7c3TqSWYmddBh2uxhSUXVQG4hPj9pIKeuG2fR91StDm2Y/0GgG0f9lag+6yibiWMbCqlVDI9rf44Im42siuMAR3rIyqq7VX5h93ka6KUcXv5MG5+zUqWWNA=
