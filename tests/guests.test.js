@@ -9,7 +9,6 @@ const Guest = require('../src/models/guest');
 
 describe('Guests (/guests)', () => {
     let app;
-    let controller;
     let request;
     let fixture
 
