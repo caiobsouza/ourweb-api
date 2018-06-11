@@ -1,5 +1,6 @@
 const express = require('express');
 const sinon = require('sinon');
+const rewiremock = require('rewiremock').default;
 const supertest = require('supertest');
 const { expect } = require('chai');
 
@@ -8,12 +9,18 @@ describe('Default (/)' , () => {
     let controller;
     let request;
 
-    beforeAll(() => {
+    before(() => {
         app = express();
 
-        controller = require('../src/controllers/base.controller');
+        const controllerMock = {
+            get: sinon.stub().returns('200 OK')
+        }
 
-        require('../src/routes/base')(app, controller);
+        const route = rewiremock.proxy('../src/routes/base', {
+            '../controllers/base.controller': controllerMock
+        });
+
+        route(app);
         request = supertest(app);
     });
 

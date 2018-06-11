@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node index",
     "live": "nodemon index",
-    "test": "jest --coverage",
-    "jest": "jest"
+    "test": "nyc mocha --recursive tests/**/*.test.js",
+    "test-no-coverage": "mocha --recursive tests/**/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -36,8 +36,8 @@
     "winston": "^2.4.2"
   },
   "devDependencies": {
-    "jest": "^22.4.3",
     "mocha": "^5.1.1",
-    "nodemon": "^1.17.3"
+    "nodemon": "^1.17.3",
+    "nyc": "^12.0.2"
   }
 }
