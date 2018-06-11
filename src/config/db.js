@@ -10,4 +10,4 @@ module.exports = {
             winston.log('db connection stablished');
         });
     }
-}
+};
