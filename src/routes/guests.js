@@ -13,5 +13,13 @@ module.exports = (app) => {
                 res.status(500).json(err);
             });
     });
+
+    router.get('/:id', (req, res) => {
+        controller.getById(req.params.id)
+            .then(guest => res.json(guest))
+            .catch(err => {
+                res.status(500).json(err);
+            });
+    });
 };
 
