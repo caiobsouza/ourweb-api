@@ -27,6 +27,7 @@
     "body-parser": "^1.18.2",
     "chai": "^4.1.2",
     "cors": "^2.8.4",
+    "crc": "^3.5.0",
     "express": "^4.16.3",
     "mongoose": "^5.0.13",
     "mongoose-dummy": "^1.0.2",
