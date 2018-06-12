@@ -26,15 +26,14 @@ module.exports = (app) => {
     router.post('/', (req, res) => {
         const guest = new Guest(req.body);
         controller.create(guest)
-            .then(guest => res.status(201).json(guest))
+            .then(created => res.status(201).json(created))
             .catch(err => {
                 res.status(500).json(err);
             });
     });
 
     router.put('/:id', (req, res) => {
-        const guest = new Guest(req.body);
-        controller.update(req.params.id, guest)
+        controller.update(req.params.id, req.body)
             .then(guest => res.json(guest))
             .catch(err => {
                 res.status(500).json(err);

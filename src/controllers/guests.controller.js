@@ -12,7 +12,7 @@ module.exports = {
         return doc.save();
     },
     update(id, guest) {
-        return Guest.findByIdAndUpdate(id, guest);
+        return Guest.findByIdAndUpdate(id, guest, { new: true });
     },
     delete(id) {
         return Guest.findByIdAndRemove(id);
