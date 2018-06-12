@@ -31,5 +31,14 @@ module.exports = (app) => {
                 res.status(500).json(err);
             });
     });
+
+    router.put('/:id', (req, res) => {
+        const guest = new Guest(req.body);
+        controller.update(req.params.id, guest)
+            .then(guest => res.json(guest))
+            .catch(err => {
+                res.status(500).json(err);
+            });
+    });
 };
 

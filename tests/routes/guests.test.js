@@ -75,4 +75,20 @@ describe('[Route] /guests', () => {
                 done();
             });
     });
+
+    it('should update a guest', done => {
+        const guest = { name: 'Josh' };
+        controllerMock.update = sinon.stub().withArgs(1, guest).resolves(new Guest(guest));
+
+        request
+            .put('/guests/1')
+            .send(guest)
+            .expect(200)
+            .expect('Content-Type', /json/)
+            .end(function (err, res) {
+                expect(err).to.be.null;
+                expect(res.body.name).to.be.deep.equal(guest.name);
+                done();
+            })
+    });
 });

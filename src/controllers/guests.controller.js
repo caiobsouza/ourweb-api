@@ -7,8 +7,11 @@ module.exports = {
     getById(id) {
         return Guest.findById(id);
     },
-    create(guest){
+    create(guest) {
         const doc = new Guest(guest);
         return doc.save();
+    },
+    update(id, guest) {
+        return Guest.findByIdAndUpdate(id, guest);
     }
 };
