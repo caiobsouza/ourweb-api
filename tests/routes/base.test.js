@@ -4,7 +4,7 @@ const rewiremock = require('rewiremock').default;
 const supertest = require('supertest');
 const { expect } = require('chai');
 
-describe('Default (/)' , () => {
+describe('[Route] /' , () => {
     let app;
     let request;
 
@@ -23,7 +23,7 @@ describe('Default (/)' , () => {
         request = supertest(app);
     });
 
-    it('Should return 200 OK', (done) => {
+    it('should return 200 OK', (done) => {
         request
             .get('/')
             .expect(200)

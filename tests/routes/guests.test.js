@@ -7,7 +7,7 @@ const { expect } = require('chai');
 
 const Guest = require('../../src/models/guest');
 
-describe('Guests (/guests)', () => {
+describe('[Route] /guests', () => {
     let app;
     let request;
     let fixture
@@ -34,7 +34,7 @@ describe('Guests (/guests)', () => {
         request = supertest(app);
     });
 
-    it('Should return all guests', (done) => {
+    it('should return all guests', (done) => {
         request
             .get('/guests')
             .expect(200)
