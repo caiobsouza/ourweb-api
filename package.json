@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node index",
     "live": "nodemon index",
-    "test-with-coverage": "nyc mocha --recursive tests/**/*.test.js",
-    "test": "mocha --recursive tests/**/*.test.js"
+    "test-with-coverage": "nyc mocha --recursive tests/**/*.test.js --exit",
+    "test": "mocha --recursive tests/**/*.test.js --exit"
   },
   "repository": {
     "type": "git",

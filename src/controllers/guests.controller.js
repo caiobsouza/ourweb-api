@@ -13,5 +13,8 @@ module.exports = {
     },
     update(id, guest) {
         return Guest.findByIdAndUpdate(id, guest);
+    },
+    delete(id) {
+        return Guest.findByIdAndRemove(id);
     }
 };

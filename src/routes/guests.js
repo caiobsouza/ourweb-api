@@ -40,5 +40,15 @@ module.exports = (app) => {
                 res.status(500).json(err);
             });
     });
+
+    router.delete('/:id', (req, res) => {
+        controller.delete(req.params.id)
+            .then((guest) => res.json({ 
+                message: 'Removed.', 
+                data: guest }))
+            .catch(err => {
+                res.status(500).json(err);
+            });
+    });
 };
 
