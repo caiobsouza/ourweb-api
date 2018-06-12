@@ -10,7 +10,8 @@ const Guest = require('../../src/models/guest');
 describe('[Route] /guests', () => {
     let app;
     let request;
-    let fixture
+    let fixture;
+    let controllerMock;
 
     before(() => {
 
@@ -21,9 +22,9 @@ describe('[Route] /guests', () => {
             dummy(Guest, { ignore: '_v', returnDate: true })
         ];
 
-        const controllerMock = {
+        controllerMock = {
             getAll: sinon.stub().resolves(fixture),
-            getById : sinon.stub().withArgs(1).resolves(fixture[1])
+            getById: sinon.stub().withArgs(1).resolves(fixture[1])
         }
 
         const route = rewiremock.proxy('../../src/routes/guests', {
@@ -54,6 +55,23 @@ describe('[Route] /guests', () => {
             .end(function (err, res) {
                 expect(err).to.be.null;
                 expect(res.body).to.be.deep.equal(fixture[1]);
+                done();
+            });
+    });
+
+    it('should create a guest', (done) => {
+        const newGuest = { name: 'Jason' };
+
+        controllerMock.create = sinon.stub().withArgs(newGuest).resolves(new Guest(newGuest));
+
+        request
+            .post('/guests')
+            .send(newGuest)
+            .expect(201)
+            .expect('Content-Type', /json/)
+            .end(function (err, res) {
+                expect(err).to.be.null;
+                expect(res.body.name).to.be.deep.equal(newGuest.name);
                 done();
             });
     });

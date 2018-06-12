@@ -6,5 +6,9 @@ module.exports = {
     },
     getById(id) {
         return Guest.findById(id);
+    },
+    create(guest){
+        const doc = new Guest(guest);
+        return doc.save();
     }
 };
