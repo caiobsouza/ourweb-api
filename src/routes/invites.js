@@ -28,4 +28,14 @@ module.exports = (app) => {
             .then(invite => res.json(invite))
             .catch(err => res.status(500).json(err));
     });
+
+    router.delete('/:id', (req, res) => {
+        controller.delete(req.params.id)
+            .then((invite) => res.json({ 
+                message: 'Removed.', 
+                data: invite }))
+            .catch(err => {
+                res.status(500).json(err);
+            });
+    });
 };

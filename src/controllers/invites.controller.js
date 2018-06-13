@@ -13,5 +13,8 @@ module.exports = {
     },
     update(id, doc) {
         return Invite.findByIdAndUpdate(id, doc, { new: true });
+    },
+    delete(id){
+        return Invite.findByIdAndRemove(id);
     }
 };

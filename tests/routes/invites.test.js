@@ -98,5 +98,19 @@ describe('[Route] /invites', () => {
                 done();
             })
     });
+
+    it('should delete a invite', done => {
+        controllerMock.delete = sinon.stub().withArgs(1).resolves(fixture[0]);
+
+        request
+            .delete('/invites/1')
+            .expect(200)
+            .expect('Content-Type', /json/)
+            .end(function (err, res) {
+                expect(err).to.be.null;
+                expect(res.body.data).to.be.deep.equal(fixture[0]);
+                done();
+            })
+    });
 });
 
