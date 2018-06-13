@@ -6,10 +6,6 @@ const generate_id = () => {
 };
 
 const GuestSchema = new mongoose.Schema({
-    _id: {
-        type: String,
-        default: generate_id
-    },
     name: {
         type: String,
         required: true

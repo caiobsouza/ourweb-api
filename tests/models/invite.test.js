@@ -14,6 +14,11 @@ describe('[Model] Invite', () => {
         });
     });
 
+    it('should generate a short id', () => {
+        expect(invite._id).to.not.be.null;
+        expect(invite._id.length).to.be.lessThan(8);
+    });
+
     it('should not be null', () => {
         expect(invite).to.be.not.null.and.not.undefined;
     });
