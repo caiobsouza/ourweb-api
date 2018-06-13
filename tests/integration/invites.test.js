@@ -5,29 +5,29 @@ const chaiHttp = require('chai-http');
 const dummy = require('mongoose-dummy');
 const { describe, it, before } = require('mocha');
 
-const app = require('../src/app');
-const Guest = require('../src/models/guest');
+const app = require('../../src/app');
+const Invite = require('../../src/models/invite');
 
 const { expect } = chai;
 chai.use(chaiHttp);
 
-describe('[Integration] Guests', () => {
+describe('[Integration] Invites', () => {
 
     let server;
-    let GUEST;
+    let INVITE;
 
     before(() => {
-        GUEST = dummy(Guest, { ignore: '_v', returnDate: true });
+        INVITE = dummy(Invite, { ignore: '_v', returnDate: true });
 
         server = http.createServer(app);
         server.listen(5002, () => {
-            winston.info('Server listening at 5002');
+            winston.log('Test server listening at 5002');
         });
     });
 
-    it('should return the guests', done => {
+    it('should return the invites', done => {
         chai.request(server)
-            .get('/guests')
+            .get('/invites')
             .end((err, res) => {
                 expect(err).to.be.null;
                 expect(res.status).to.be.deep.equal(200);
@@ -36,46 +36,43 @@ describe('[Integration] Guests', () => {
             });
     });
 
-    it('should create a guest', done => {
-
+    it('should create a invite', done => {
         chai.request(server)
-            .post('/guests')
-            .send(GUEST)
+            .post('/invites')
+            .send(INVITE)
             .end((err, res) => {
                 expect(err).to.be.null;
                 expect(res.status).to.be.deep.equal(201);
                 expect(res).to.be.json;
 
-                const createdGuest = res.body;
+                const createdInvite = res.body;
 
-                expect(createdGuest.name).to.be.equal(GUEST.name);
-                expect(createdGuest.relationship).to.be.equal(GUEST.relationship);
-                expect(createdGuest.shallConfirm).to.be.equal(GUEST.shallConfirm);
-                expect(createdGuest.confirmed).to.be.equal(GUEST.confirmed);
+                expect(createdInvite.title).to.be.equal(INVITE.title);
+                expect(createdInvite.description).to.be.equal(INVITE.description);
                 
                 done();
             });
     });
 
-    it('should update a guest', done => {
-        GUEST.name = 'Juazeiro';
+    it('should update a invite', done => {
+        INVITE.title = 'Another Title';
 
         chai.request(server)
-            .put(`/guests/${GUEST._id}`)
-            .send(GUEST)
+            .put(`/invites/${INVITE._id}`)
+            .send(INVITE)
             .end((err, res) => {
                 expect(err).to.be.null;
                 expect(res.status).to.be.deep.equal(200);
                 expect(res).to.be.json;
                 
-                expect(res.body.name).to.be.equal('Juazeiro');
+                expect(res.body.title).to.be.equal('Another Title');
                 done();
             });
     });
 
-    it('should delete a guest', done => {
+    it('should delete a invite', done => {
         chai.request(server)
-            .del(`/guests/${GUEST._id}`)
+            .del(`/invites/${INVITE._id}`)
             .end((err, res) => {
                 expect(err).to.be.null;
                 expect(res.status).to.be.deep.equal(200);

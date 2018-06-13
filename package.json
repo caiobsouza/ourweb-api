@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "live": "nodemon index",
-    "test-with-coverage": "nyc mocha --recursive tests/**/*.test.js --exit",
-    "test": "mocha --recursive tests/**/*.test.js --exit",
-    "integration-tests": "mocha --recursive integration_tests/**/*.test.js --exit",
-    "all-tests": "npm run test-with-coverage && npm run integration-tests"
+    "live-dev": "nodemon index",
+    "test": "mocha tests/{models,routes}/*.test.js --recursive --exit",
+    "test-integration": "mocha tests/integration/*.test.js --recursive --exit",
+    "test-with-coverage": "nyc npm run test-all",
+    "test-all": "mocha tests/**/*.test.js --recursive --exit"
   },
   "repository": {
     "type": "git",
