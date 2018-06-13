@@ -22,4 +22,10 @@ module.exports = (app) => {
             .then(invite => res.status(201).json(invite))
             .catch(err => res.status(500).json(err));
     });
+
+    router.put('/:id', (req, res) => {
+        controller.update(req.params.id, res.body)
+            .then(invite => res.json(invite))
+            .catch(err => res.status(500).json(err));
+    });
 };

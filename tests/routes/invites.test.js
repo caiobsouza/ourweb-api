@@ -8,7 +8,7 @@ const rewiremock = require('rewiremock').default;
 
 const Invite = require('../../src/models/invite');;
 
-describe('[Route] Invites', () => {
+describe('[Route] /invites', () => {
     let app;
     let fixture;
     let controllerMock;
@@ -81,6 +81,22 @@ describe('[Route] Invites', () => {
                 expect(res.body.guests).to.be.deep.equal(INVITE.guests);
                 done();
             });
+    });
+
+    it('should update an invite', done => {
+        const invite = { title: 'Josh' };
+        controllerMock.update = sinon.stub().withArgs(1, invite).resolves(new Invite(invite));
+
+        request
+            .put('/invites/1')
+            .send(invite)
+            .expect(200)
+            .expect('Content-Type', /json/)
+            .end(function (err, res) {
+                expect(err).to.be.null;
+                expect(res.body.title).to.be.deep.equal(invite.title);
+                done();
+            })
     });
 });
 
