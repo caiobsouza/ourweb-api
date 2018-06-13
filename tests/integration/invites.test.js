@@ -69,7 +69,7 @@ describe('[Integration] Invites', () => {
             });
     });
 
-    it('should do something', () => {
+    it('should do something', done => {
         const GUEST = '5b216b3606618e1645a3611e';
 
         chai.request(server)
