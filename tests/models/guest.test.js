@@ -9,7 +9,7 @@ describe('[Model] Guest', () => {
 
     let guest;
 
-    before(()=>{
+    before(() => {
         guest = new Guest({
             name: 'John'
         });
