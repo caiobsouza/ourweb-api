@@ -19,5 +19,8 @@ module.exports = {
     },
     addGuest(id, guestId) {
         return Invite.findByIdAndUpdate(id, { $push: { guests: guestId } }, { new: true });
+    },
+    removeGuest(id, guestId) {
+        return Invite.findByIdAndUpdate(id, { $pull: { guests: guestId } }, { new: true });
     }
 };

@@ -45,4 +45,10 @@ module.exports = (app) => {
             .then(invite => res.json(invite))
             .catch(err => res.status(500).json(err));
     });
+
+    router.delete('/:id/guest/:guest', (req, res) => {
+        controller.removeGuest(req.params.id, req.params.guest)
+            .then(invite => res.json(invite))
+            .catch(err => res.status(500).json(err));
+    });
 };

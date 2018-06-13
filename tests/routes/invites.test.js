@@ -128,5 +128,18 @@ describe('[Route] /invites', () => {
                 done();
             });
     });
+
+    it('should remove a guest from an invite', done => {
+        controllerMock.removeGuest = sinon.stub().withArgs(1, null).resolves(fixture[1]);
+
+        request
+            .delete('/invites/1/guest/5b2088b00000000000000001')
+            .expect(200)
+            .expect('Content-Type', /json/)
+            .end(function (err, res) {
+                expect(err).to.be.null;
+                done();
+            });
+    });
 });
 
