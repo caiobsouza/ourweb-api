@@ -48,7 +48,7 @@ describe('[Integration] Invites', () => {
 
                 expect(createdInvite.title).to.be.equal(INVITE.title);
                 expect(createdInvite.description).to.be.equal(INVITE.description);
-                
+
                 done();
             });
     });
@@ -63,8 +63,24 @@ describe('[Integration] Invites', () => {
                 expect(err).to.be.null;
                 expect(res.status).to.be.deep.equal(200);
                 expect(res).to.be.json;
-                
+
                 expect(res.body.title).to.be.equal('Another Title');
+                done();
+            });
+    });
+
+    it('should do something', () => {
+        const GUEST = '5b216b3606618e1645a3611e';
+
+        chai.request(server)
+            .post(`/invites/${INVITE._id}/guest/${GUEST}`)
+            .end((err, res) => {
+                expect(err).to.be.null;
+                expect(res.status).to.be.deep.equal(200);
+                expect(res).to.be.json;
+
+                expect(res.body.guests).to.contains(GUEST);
+
                 done();
             });
     });

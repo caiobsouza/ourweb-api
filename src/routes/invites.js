@@ -31,11 +31,18 @@ module.exports = (app) => {
 
     router.delete('/:id', (req, res) => {
         controller.delete(req.params.id)
-            .then((invite) => res.json({ 
-                message: 'Removed.', 
-                data: invite }))
+            .then((invite) => res.json({
+                message: 'Removed.',
+                data: invite
+            }))
             .catch(err => {
                 res.status(500).json(err);
             });
+    });
+
+    router.post('/:id/guest/:guest', (req, res) => {
+        controller.addGuest(req.params.id, req.params.guest)
+            .then(invite => res.json(invite))
+            .catch(err => res.status(500).json(err));
     });
 };

@@ -6,7 +6,7 @@ const sinon = require('sinon');
 const dummy = require('mongoose-dummy');
 const rewiremock = require('rewiremock').default;
 
-const Invite = require('../../src/models/invite');;
+const Invite = require('../../src/models/invite');
 
 describe('[Route] /invites', () => {
     let app;
@@ -110,7 +110,23 @@ describe('[Route] /invites', () => {
                 expect(err).to.be.null;
                 expect(res.body.data).to.be.deep.equal(fixture[0]);
                 done();
-            })
+            });
+    });
+
+    it('should associate a guest to an invite', done => {
+        const guest = '5b2088b00000000000000001';
+        fixture[1].guests.push(guest);
+        controllerMock.addGuest = sinon.stub().withArgs(1, guest).resolves(fixture[1]);
+
+        request
+            .post('/invites/1/guest/5b2088b00000000000000001')
+            .expect(200)
+            .expect('Content-Type', /json/)
+            .end(function (err, res) {
+                expect(err).to.be.null;
+                expect(res.body.guests).to.contain(guest);
+                done();
+            });
     });
 });
 
