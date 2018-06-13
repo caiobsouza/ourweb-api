@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index",
     "live-dev": "nodemon index",
-    "test": "mocha tests/{models,routes}/*.test.js --recursive --exit",
+    "test": "mocha tests/{models,routes}/*.test.js --recursive -R nyan --exit",
     "test-integration": "mocha tests/integration/*.test.js --recursive --exit",
     "test-with-coverage": "nyc npm run test-all",
     "test-all": "mocha tests/**/*.test.js --recursive --exit"

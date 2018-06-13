@@ -80,7 +80,6 @@ describe('[Integration] Invites', () => {
                 expect(res).to.be.json;
 
                 expect(res.body.guests).to.contains(GUEST);
-
                 done();
             });
     });
