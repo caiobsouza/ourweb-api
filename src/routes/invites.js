@@ -24,7 +24,7 @@ module.exports = (app) => {
     });
 
     router.put('/:id', (req, res) => {
-        controller.update(req.params.id, res.body)
+        controller.update(req.params.id, req.body)
             .then(invite => res.json(invite))
             .catch(err => res.status(500).json(err));
     });

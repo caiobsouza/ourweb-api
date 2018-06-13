@@ -8,7 +8,8 @@
     "live": "nodemon index",
     "test-with-coverage": "nyc mocha --recursive tests/**/*.test.js --exit",
     "test": "mocha --recursive tests/**/*.test.js --exit",
-    "integration-tests": "mocha --recursive integration_tests/**/*.test.js --exit"
+    "integration-tests": "mocha --recursive integration_tests/**/*.test.js --exit",
+    "all-tests": "npm run test-with-coverage && npm run integration-tests"
   },
   "repository": {
     "type": "git",
