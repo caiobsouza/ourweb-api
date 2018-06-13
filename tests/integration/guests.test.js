@@ -3,7 +3,6 @@ const http = require('http');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const dummy = require('mongoose-dummy');
-const { describe, it, before } = require('mocha');
 
 const app = require('../../src/app');
 const Guest = require('../../src/models/guest');
