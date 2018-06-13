@@ -11,12 +11,13 @@ const { expect } = chai;
 chai.use(chaiHttp);
 
 describe('[Integration] Invites', () => {
-
+    
     let server;
-    let INVITE;
+    let _invite;
+    const GUEST = '5b216b3606618e1645a3611e';
 
     before(() => {
-        INVITE = dummy(Invite, { ignore: '_v', returnDate: true });
+        _invite = dummy(Invite, { ignore: '_v', returnDate: true });
 
         server = http.createServer(app);
         server.listen(5002, () => {
@@ -38,7 +39,7 @@ describe('[Integration] Invites', () => {
     it('should create a invite', done => {
         chai.request(server)
             .post('/invites')
-            .send(INVITE)
+            .send(_invite)
             .end((err, res) => {
                 expect(err).to.be.null;
                 expect(res.status).to.be.deep.equal(201);
@@ -46,19 +47,19 @@ describe('[Integration] Invites', () => {
 
                 const createdInvite = res.body;
 
-                expect(createdInvite.title).to.be.equal(INVITE.title);
-                expect(createdInvite.description).to.be.equal(INVITE.description);
+                expect(createdInvite.title).to.be.equal(_invite.title);
+                expect(createdInvite.description).to.be.equal(_invite.description);
 
                 done();
             });
     });
 
     it('should update a invite', done => {
-        INVITE.title = 'Another Title';
+        _invite.title = 'Another Title';
 
         chai.request(server)
-            .put(`/invites/${INVITE._id}`)
-            .send(INVITE)
+            .put(`/invites/${_invite._id}`)
+            .send(_invite)
             .end((err, res) => {
                 expect(err).to.be.null;
                 expect(res.status).to.be.deep.equal(200);
@@ -70,10 +71,8 @@ describe('[Integration] Invites', () => {
     });
 
     it('should add a guest to an invite', done => {
-        const GUEST = '5b216b3606618e1645a3611e';
-
         chai.request(server)
-            .post(`/invites/${INVITE._id}/guest/${GUEST}`)
+            .post(`/invites/${_invite._id}/guest/${GUEST}`)
             .end((err, res) => {
                 expect(err).to.be.null;
                 expect(res.status).to.be.deep.equal(200);
@@ -83,25 +82,23 @@ describe('[Integration] Invites', () => {
                 done();
             });
     });
-    
-    it('should add a guest to an invite', done => {
-        const GUEST = '5b216b3606618e1645a3611e';
 
+    it('should remove a guest from an invite', done => {
         chai.request(server)
-            .post(`/invites/${INVITE._id}/guest/${GUEST}`)
+            .delete(`/invites/${_invite._id}/guest/${GUEST}`)
             .end((err, res) => {
                 expect(err).to.be.null;
                 expect(res.status).to.be.deep.equal(200);
                 expect(res).to.be.json;
 
-                expect(res.body.guests).to.contains(GUEST);
+                expect(res.body.guests).to.not.contains(GUEST);
                 done();
             });
     });
 
     it('should delete a invite', done => {
         chai.request(server)
-            .del(`/invites/${INVITE._id}`)
+            .del(`/invites/${_invite._id}`)
             .end((err, res) => {
                 expect(err).to.be.null;
                 expect(res.status).to.be.deep.equal(200);
