@@ -20,7 +20,7 @@ describe('[Integration] Guests', () => {
 
         server = http.createServer(app);
         server.listen(5002, () => {
-            winston.info('Server listening at 5002');
+            winston.info('Test server listening at 5002');
         });
     });
 
