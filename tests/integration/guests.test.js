@@ -51,7 +51,7 @@ describe('[Integration] Guests', () => {
                 expect(createdGuest.relationship).to.be.equal(GUEST.relationship);
                 expect(createdGuest.shallConfirm).to.be.equal(GUEST.shallConfirm);
                 expect(createdGuest.confirmed).to.be.equal(GUEST.confirmed);
-                
+
                 done();
             });
     });
@@ -66,8 +66,20 @@ describe('[Integration] Guests', () => {
                 expect(err).to.be.null;
                 expect(res.status).to.be.deep.equal(200);
                 expect(res).to.be.json;
-                
+
                 expect(res.body.name).to.be.equal('Juazeiro');
+                done();
+            });
+    });
+    
+    it('should confirm a guest', done => {
+        chai.request(server)
+            .put(`/guests/${GUEST._id}/confirm`)
+            .end((err, res) => {
+                expect(err).to.be.null;
+                expect(res.status).to.be.deep.equal(200);
+                expect(res).to.be.json;
+                expect(res.body.confirmed).to.be.true;
                 done();
             });
     });
@@ -82,4 +94,5 @@ describe('[Integration] Guests', () => {
                 done();
             });
     });
+
 });

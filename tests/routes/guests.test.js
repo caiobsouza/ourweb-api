@@ -103,6 +103,21 @@ describe('[Route] /guests', () => {
                 expect(err).to.be.null;
                 expect(res.body.data).to.be.deep.equal(fixture[0]);
                 done();
-            })
+            });
+    });
+
+    it('should confirm a guest presence by id', done => {
+        fixture[1].confirmed = true;
+        controllerMock.confirmGuest = sinon.stub().withArgs(fixture[1]._id).resolves(fixture[1]);
+
+        request
+            .put(`/guests/${fixture[1]._id}/confirm`)
+            .expect(200)
+            .expect('Content-Type', /json/)
+            .end(function (err, res) {
+                expect(err).to.be.null;
+                expect(res.body.confirmed).to.be.true;
+                done();
+            });
     });
 });

@@ -16,5 +16,8 @@ module.exports = {
     },
     delete(id) {
         return Guest.findByIdAndRemove(id);
+    },
+    confirmGuest(id) {
+        return Guest.findByIdAndUpdate(id, { confirmed: true }, { new: true });
     }
 };

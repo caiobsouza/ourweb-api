@@ -42,9 +42,18 @@ module.exports = (app) => {
 
     router.delete('/:id', (req, res) => {
         controller.delete(req.params.id)
-            .then((guest) => res.json({ 
-                message: 'Removed.', 
-                data: guest }))
+            .then((guest) => res.json({
+                message: 'Removed.',
+                data: guest
+            }))
+            .catch(err => {
+                res.status(500).json(err);
+            });
+    });
+
+    router.put('/:id/confirm', (req, res) => {
+        controller.confirmGuest(req.params.id, req.body)
+            .then(guest => res.json(guest))
             .catch(err => {
                 res.status(500).json(err);
             });
