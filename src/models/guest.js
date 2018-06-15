@@ -1,9 +1,4 @@
 const mongoose = require('mongoose');
-const crc = require('crc');
-
-const generate_id = () => {
-    return crc.crc32(new Date().toISOString()).toString(36).toUpperCase();
-};
 
 const GuestSchema = new mongoose.Schema({
     name: {
