@@ -18,10 +18,10 @@ describe('[Route] /guests', () => {
         app = express();
 
         fixture = [
-            dummy(Guest, { ignore: '_v', returnDate: true }),
-            dummy(Guest, { ignore: '_v', returnDate: true })
+            dummy(Guest, { autoDetect: false, returnDate: true }),
+            dummy(Guest, { autoDetect: false, returnDate: true })
         ];
-
+        
         controllerMock = {
             getAll: sinon.stub().resolves(fixture),
             getById: sinon.stub().withArgs(1).resolves(fixture[1])

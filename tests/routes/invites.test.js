@@ -18,8 +18,8 @@ describe('[Route] /invites', () => {
         app = express();
 
         fixture = [
-            dummy(Invite, { ignore: '_v', returnDate: true }),
-            dummy(Invite, { ignore: '_v', returnDate: true })
+            dummy(Invite, { returnDate: true }),
+            dummy(Invite, { returnDate: true })
         ]
 
         controllerMock = {
