@@ -14,6 +14,9 @@ const GuestSchema = new mongoose.Schema({
             'OUTRO'
         ]
     },
+    phoneNumber: {
+        type: String
+    },
     confirmed: {
         type: Boolean,
         default: false

@@ -11,7 +11,8 @@ describe('[Model] Guest', () => {
 
     before(() => {
         guest = new Guest({
-            name: 'John'
+            name: 'John',
+            phoneNumber: '9 8888 77777'
         });
     });
 
@@ -22,5 +23,9 @@ describe('[Model] Guest', () => {
     it('should have a regular ObjectId', () => {
         const isValidObjectId = mongoose.Types.ObjectId.isValid(guest._id);
         expect(isValidObjectId).to.be.true;
+    });
+
+    it('should have a telephone property', () => {
+       expect(guest._doc).to.haveOwnProperty('phoneNumber');
     });
 });
