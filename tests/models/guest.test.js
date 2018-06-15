@@ -26,6 +26,10 @@ describe('[Model] Guest', () => {
     });
 
     it('should have a telephone property', () => {
-       expect(guest._doc).to.haveOwnProperty('phoneNumber');
+       expect(Guest.schema.obj).to.haveOwnProperty('phoneNumber');
     });
+
+    it('should have a telephone property', () => {
+        expect(Guest.schema.obj).to.haveOwnProperty('email');
+     });
 });

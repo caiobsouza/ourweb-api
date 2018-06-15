@@ -14,6 +14,9 @@ const GuestSchema = new mongoose.Schema({
             'OUTRO'
         ]
     },
+    email:{
+        type: String
+    },
     phoneNumber: {
         type: String
     },
