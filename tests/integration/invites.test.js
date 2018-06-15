@@ -17,7 +17,7 @@ describe('[Integration] Invites', () => {
     const GUEST = '5b216b3606618e1645a3611e';
 
     before(() => {
-        _invite = dummy(Invite, { ignore: '_v', returnDate: true });
+        _invite = dummy(Invite, { ignoreFields: ['_v'], autoDetect: false, returnDate: true });
 
         server = http.createServer(app);
         server.listen(5002, () => {

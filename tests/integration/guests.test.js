@@ -16,7 +16,7 @@ describe('[Integration] Guests', () => {
     let GUEST;
 
     before(() => {
-        GUEST = dummy(Guest, { ignore: '_v', returnDate: true });
+        GUEST = dummy(Guest, { ignoreFields: ['_v'], autoDetect: false, returnDate: true });
 
         server = http.createServer(app);
         server.listen(5002, () => {
