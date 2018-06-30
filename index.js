@@ -1,5 +1,12 @@
 const http = require('http');
-const winston = require('winston');
+const db = require('./src/config/db');
+const logger = require('./src/config/log')();
+
+db.setup(() => {
+    logger.log('db connection stablished');
+}, (err) => {
+    logger.error(`db connection error: ${err.message}`);
+});
 
 const app = require('./src/app');
 
@@ -7,9 +14,9 @@ const PORT = process.env.PORT || 5001;
 const server = http.createServer(app);
 
 server.listen(PORT, () => {
-    winston.info(`Server listening at ${PORT}`);
+    logger.info(`Server listening at ${PORT}`);
 });
 
 server.on('error', (err) => {
-    winston.error(err.message);
+    logger.error(err.message);
 });
