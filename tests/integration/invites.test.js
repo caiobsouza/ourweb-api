@@ -1,10 +1,10 @@
-const winston = require('winston');
 const http = require('http');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const dummy = require('mongoose-dummy');
 
 const app = require('../../src/app');
+const db = require('../../src/config/db');
 const Invite = require('../../src/models/invite');
 
 const { expect } = chai;
@@ -19,9 +19,11 @@ describe('[Integration] Invites', () => {
     before(() => {
         _invite = dummy(Invite, { ignoreFields: ['_v'], autoDetect: false, returnDate: true });
 
+        db.setup(() => console.log('connected to database'), err => console.error(err));
+
         server = http.createServer(app);
-        server.listen(5002, () => {
-            winston.log('Test server listening at 5002');
+        server.listen(50033, () => {
+            console.log('Test server listening at 50033');
         });
     });
 
