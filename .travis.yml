@@ -7,7 +7,7 @@ branches:
 notifications:
   email: false
 deploy:
-  provider: gce
+  provider: gae
   project: wedding-caiogabi
   keyfile: gce.json
   verbosity: debug
