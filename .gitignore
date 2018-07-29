@@ -57,3 +57,5 @@ typings/
 # dotenv environment variables file
 .env
 
+# Google App Engine Keys
+gce.json
