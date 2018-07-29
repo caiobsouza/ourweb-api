@@ -10,7 +10,7 @@ deploy:
   provider: gae
   project: wedding-caiogabi
   keyfile: gce.json
-  verbosity: debug
+  verbosity: warning
   on:
     repo: caiobsouza/ourwed-api
     branch: master
