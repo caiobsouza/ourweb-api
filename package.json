@@ -4,6 +4,7 @@
   "description": "our wedding api",
   "main": "index.js",
   "scripts": {
+    "prestart": "node scripts/get-env",
     "start": "node index",
     "test": "mocha tests/{models,routes}/*.test.js --recursive --exit",
     "test-all": "mocha tests/**/*.test.js --recursive -R nyan --exit",
@@ -25,11 +26,13 @@
   },
   "homepage": "https://github.com/caiobsouza/ourwed-api#readme",
   "dependencies": {
+    "@google-cloud/storage": "^1.7.0",
     "body-parser": "^1.18.2",
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
     "cors": "^2.8.4",
     "crc": "^3.5.0",
+    "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "express-jwt": "^5.3.1",
     "express-jwt-authz": "^1.0.0",
