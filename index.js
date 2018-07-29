@@ -3,6 +3,8 @@ const db = require('./src/config/db');
 const winston = require('winston');
 const logger = require('./src/config/logger');
 
+require('dotenv').config();
+
 winston.add(logger());
 
 db.setup(() => {
