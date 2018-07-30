@@ -12,6 +12,7 @@ describe('[Model] Rsvp', () => {
     before(() => {
         rsvp = new Rsvp({
             name: 'John',
+            email: 'john.doe@mail.com',
             confirmed: true
         });
     });
@@ -26,10 +27,14 @@ describe('[Model] Rsvp', () => {
     });
 
     it('should have a name property', () => {
-       expect(Rsvp.schema.obj).to.haveOwnProperty('name');
+        expect(Rsvp.schema.obj).to.haveOwnProperty('name');
     });
 
     it('should have a confirmed property', () => {
         expect(Rsvp.schema.obj).to.haveOwnProperty('confirmed');
-     });
+    });
+
+    it('should have a confirmed property', () => {
+        expect(Rsvp.schema.obj).to.haveOwnProperty('email');
+    });
 });

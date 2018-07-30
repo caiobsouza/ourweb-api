@@ -5,6 +5,10 @@ const RsvpSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    email: {
+        type: String,
+        required: true
+    },
     confirmed: {
         type: Boolean,
         required: true
