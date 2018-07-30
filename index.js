@@ -8,7 +8,7 @@ require('dotenv').config();
 winston.add(logger());
 
 db.setup(() => {
-    winston.log('db connection stablished');
+    winston.info('db connection stablished');
 }, (err) => {
     winston.error(`db connection error: ${err.message}`);
 });

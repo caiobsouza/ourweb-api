@@ -27,6 +27,7 @@
   "homepage": "https://github.com/caiobsouza/ourwed-api#readme",
   "dependencies": {
     "@google-cloud/storage": "^1.7.0",
+    "axios": "^0.18.0",
     "body-parser": "^1.18.2",
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",

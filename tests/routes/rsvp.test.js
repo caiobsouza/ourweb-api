@@ -7,6 +7,8 @@ const { expect } = require('chai');
 
 const Rsvp = require('../../src/models/rsvp');
 
+process.env.TESTING = true;
+
 describe('[Route] /rsvp', () => {
     let app;
     let request;

@@ -10,6 +10,8 @@ const Rsvp = require('../../src/models/rsvp');
 const { expect } = chai;
 chai.use(chaiHttp);
 
+process.env.TESTING = true;
+
 describe('[Integration] Rsvp', () => {
 
     let server;
