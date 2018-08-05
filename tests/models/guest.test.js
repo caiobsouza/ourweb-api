@@ -12,7 +12,7 @@ describe('[Model] Guest', () => {
     before(() => {
         guest = new Guest({
             name: 'John',
-            phoneNumber: '9 8888 77777'
+            phoneNumber: '9 8888 7777'
         });
     });
 
