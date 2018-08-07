@@ -9,7 +9,8 @@
     "test": "mocha tests/{models,routes}/*.test.js --recursive --exit",
     "test-all": "mocha tests/**/*.test.js --recursive -R nyan --exit",
     "test-integration": "mocha tests/integration/*.test.js --recursive -R nyan --exit",
-    "test-report": "nyc mocha tests/**/*.test.js --recursive --exit"
+    "test-report": "nyc mocha tests/**/*.test.js --recursive --exit",
+    "deploy:gcloud": "gcloud app deploy"
   },
   "repository": {
     "type": "git",
