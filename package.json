@@ -7,9 +7,9 @@
     "prestart": "node scripts/get-env",
     "start": "node index",
     "test": "mocha tests/{models,routes}/*.test.js --recursive --exit",
-    "test-all": "mocha tests/**/*.test.js --recursive -R nyan --exit",
-    "test-integration": "TESTING=true mocha tests/integration/*.test.js --recursive --exit",
-    "test-report": "TESTING=true nyc mocha tests/**/*.test.js --recursive --exit",
+    "test:all": "mocha tests/**/*.test.js --recursive -R nyan --exit",
+    "test:integration": "TESTING=true mocha tests/integration/*.test.js --recursive --exit",
+    "test:report": "TESTING=true nyc mocha tests/**/*.test.js --recursive --exit",
     "deploy:gcloud": "gcloud app deploy"
   },
   "repository": {
