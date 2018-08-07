@@ -1,9 +1,10 @@
 const express = require('express');
 const controller = require('../controllers/invites.controller');
+const authorize = require('../middlewares/auth');
 
 module.exports = (app) => {
     const router = express.Router();
-    app.use('/invites', router);
+    app.use('/invites', authorize, router);
 
     router.get('/', (req, res) => {
         controller.getAll()

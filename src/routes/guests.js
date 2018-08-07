@@ -1,11 +1,13 @@
 const { Router } = require('express');
 const controller = require('../controllers/guests.controller');
+const authorize = require('../middlewares/auth');
+
 const Guest = require('../models/guest');
 
 module.exports = (app) => {
     const router = Router();
 
-    app.use('/guests', router);
+    app.use('/guests', authorize, router);
 
     router.get('/', (req, res) => {
         controller.getAll()
