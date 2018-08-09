@@ -40,15 +40,10 @@ describe('[Integration] Guests', () => {
     });
 
     it('should create a guest', done => {
-
-        console.log(GUEST)
-
         chai.request(server)
             .post('/guests')
             .send(GUEST)
             .end((err, res) => {
-                console.log(res.body)
-
                 expect(err).to.be.null;
                 expect(res.status).to.be.deep.equal(201);
                 expect(res).to.be.json;
