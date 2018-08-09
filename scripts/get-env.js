@@ -11,7 +11,7 @@ if (dotEnvExists) {
     process.exit();
 }
 
-const bucketName = 'envvar-wedding-caiogabi';
+const bucketName = 'finn-and-fire-princess.appspot.com';
 
 winston.info(`Downloading .env from bucket "${bucketName}"`);
 
