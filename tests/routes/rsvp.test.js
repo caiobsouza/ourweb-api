@@ -23,7 +23,7 @@ describe('[Route] /rsvp', () => {
             dummy(Rsvp, { autoDetect: false, returnDate: true }),
             dummy(Rsvp, { autoDetect: false, returnDate: true })
         ];
-        
+
         controllerMock = {
             create: sinon.stub().resolves(fixture)
         }
@@ -49,6 +49,20 @@ describe('[Route] /rsvp', () => {
             .end(function (err, res) {
                 expect(err).to.be.null;
                 expect(res.body.name).to.be.deep.equal(newRsvp.name);
+                done();
+            });
+    });
+
+    it('should return all rsvp responses', (done) => {
+        controllerMock.getAll = sinon.stub().resolves(fixture);
+
+        request
+            .get('/rsvp')
+            .expect(fixture)
+            .expect('Content-Type', /json/)
+            .end(function (err, res) {
+                expect(err).to.be.null;
+                expect(res.body).to.be.deep.equal(fixture);
                 done();
             });
     });

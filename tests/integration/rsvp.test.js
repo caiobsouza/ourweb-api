@@ -28,6 +28,17 @@ describe('[Integration] Rsvp', () => {
         });
     });
 
+    it('should return the RSVP', done => {
+        chai.request(server)
+            .get('/rsvp')
+            .end((err, res) => {
+                expect(err).to.be.null;
+                expect(res.status).to.be.deep.equal(200);
+                expect(res).to.be.json;
+                done();
+            });
+    });
+
     it('should create a RSVP', done => {
         chai.request(server)
             .post('/rsvp')
