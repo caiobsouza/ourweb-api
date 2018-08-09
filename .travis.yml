@@ -1,22 +1,19 @@
 language: node_js
 node_js:
 - 8
-cache:
-  directories:
-  - node_modules
 branches:
   only:
   - master
 notifications:
   email: false
 deploy:
-  provider: elasticbeanstalk
-  access_key_id: AKIAJXIOLYGOD2ZBSJVQ
-  secret_access_key:
-    secure: g1Y036yHj6gdbPb8lp2mPgMevVXBAY2LQTqY+gwg4JnqcmEAcMPrixNK/6qtHaH5jLURwp6yqAGUM/8VRaVPgr2TqM6H5SqJjYoo4+x47cuARpora7pTiD4A/GWoW8HXMdljlKLg8Y7y5XWKCW3xTSiEXY/QxbG8GVWxRdt6R6q5RatVxUYUz2ktYZbJx+YPC8RHplFTr84xCC5+qp3hNLYA2+ACYD1XTa57ZXqk67ZcW1AVid2DSf9G8sk23ZiYLyhVz2cNAdfxYHhYzcRGgqzjsPMwc5qce1HwT88xB9nc5KEZmY1ueglkNA0uhJJ22AZuoQiiI03pVBKY6u7Rlw4LUBxU59VHm6seXjDdFd4LIXDmeJDWQfccyHKVa48rS05UtQwesq912SkBiG6YvE6NqgIpfgjSzmXn+ZslBbYwIwhdntWIPoVQ7H72/9zLoaE3vhoAyV2LySoFxzTZ2ulu8QPFwYsVEQnOg/ioKqpgcuSDS4vJp2xWToF43x0vNXW7KAgx+6Qs47cAcCg73gG8eG4y/TFJMGF5dMySqw+Zl2gplp18vtFH0pbx4kaUWqEQ2lNZY6ccE91OuFDGq1En8nhiHGkcAVFY/kpwP2emNig/Si73z+7rUWxODW/EeC+wKFOWe+v9MDU0a6Pv2WAFs5IZJWXH0w9Uccp9EJ8=
-  region: us-east-2
-  app: wedding-api
-  env: WeddingApi-env
-  bucket_name: elasticbeanstalk-us-east-2-106606230894
+  provider: gae
+  project: wedding-caiogabi
+  keyfile: gce.json
+  verbosity: debug
   on:
     repo: caiobsouza/ourwed-api
+    branch: master
+before_install:
+- openssl aes-256-cbc -K $encrypted_38266e7cf768_key -iv $encrypted_38266e7cf768_iv
+  -in gce.json.enc -out gce.json -d
