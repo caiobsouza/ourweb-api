@@ -11,12 +11,12 @@ notifications:
   email: false
 deploy:
   provider: gae
-  project: wedding-caiogabi
-  keyfile: gce.json
+  project: finn-and-fire-princess
+  keyfile: gae.json
   verbosity: warning
   on:
     repo: caiobsouza/ourwed-api
     branch: master
 before_install:
 - openssl aes-256-cbc -K $encrypted_38266e7cf768_key -iv $encrypted_38266e7cf768_iv
-  -in gce.json.enc -out gce.json -d
+  -in gae.json.enc -out gae.json -d
