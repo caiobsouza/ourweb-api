@@ -8,7 +8,6 @@ let authorize = jwt({
         jwksRequestsPerMinute: 5,
         jwksUri: 'https://wedding-api.auth0.com/.well-known/jwks.json'
     }),
-    audience: 'wedding-api',
     issuer: 'https://wedding-api.auth0.com/',
     algorithms: ['RS256']
 });
