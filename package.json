@@ -10,7 +10,8 @@
     "test:all": "mocha tests/**/*.test.js --recursive -R nyan --exit",
     "test:integration": "TESTING=true mocha tests/integration/*.test.js --recursive --exit",
     "test:report": "TESTING=true nyc mocha tests/**/*.test.js --recursive --exit",
-    "deploy:gcloud": "gcloud app deploy --project finn-and-fire-princess"
+    "deploy:gcloud": "gcloud app deploy --project finn-and-fire-princess",
+    "deploy:encrypt-key": "travis encrypt-file gae.json --add"
   },
   "repository": {
     "type": "git",
