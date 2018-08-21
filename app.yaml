@@ -1,1 +1,3 @@
-runtime: nodejs
+runtime: nodejs8
+manual_scaling:
+  instances: 1
