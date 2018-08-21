@@ -1,0 +1,144 @@
+﻿name;relationship;shallConfirm;confirmed;email;phoneNumber
+Adelcinei Souza;FAMILIA;true;false;null;null
+Adriana Silva;AMIGO;true;false;null;null
+Adriano Borges;AMIGO;true;false;null;null
+Alberto Freitas;COLEGA;true;false;null;null
+Alexandre Yamamoto;AMIGO;false;false;null;null
+Alice Shamá (Victor Chitunda);COLEGA;true;false;null;null
+Aline Franciele;AMIGO;true;false;null;null
+Ana Beatriz Cunha;AMIGO;false;false;null;null
+Ana Luiza Figueira ;AMIGO;true;false;null;null
+Ana Paula (Luiz Cabral);OUTRO;false;false;null;null
+Anderson Cortes;FAMILIA;true;false;null;null
+Aparecida Menezes;FAMILIA;true;false;null;null
+Armenio Mattos;FAMILIA;true;false;null;null
+Barros;AMIGO;true;false;null;null
+Brenda Adeline;AMIGO;true;false;null;null
+Bruno Dias;AMIGO;true;false;null;null
+Bruno Gurgel;AMIGO;true;false;null;null
+Caio Souza;FAMILIA;true;false;null;null
+Camila Giovana;AMIGO;true;false;null;null
+Carol Machado;AMIGO;true;false;null;null
+Carolina Paulucci;FAMILIA;true;false;null;null
+Celma Menezes;FAMILIA;true;false;null;null
+Celso Menezes;FAMILIA;true;false;null;null
+Cícero Mendonça;AMIGO;true;false;null;null
+Clara Luiza Cabral;FAMILIA;false;false;null;null
+Cristina Menezes;FAMILIA;true;false;null;null
+Cristine Sousa;FAMILIA;true;false;null;null
+Daniel Freitas;AMIGO;true;false;null;null
+Danilo Santana;FAMILIA;true;false;null;null
+Darlan Elerati;FAMILIA;false;false;null;null
+Darlan Santana;FAMILIA;true;false;null;null
+Dennys (Camila Barros);AMIGO;true;false;null;null
+Edna Fernandes;FAMILIA;true;false;null;null
+Edneia Pimentel;FAMILIA;true;false;null;null
+Eduarda Borba;AMIGO;true;false;null;null
+Eduarda Medeiros;AMIGO;true;false;null;null
+Eduardo Borges;FAMILIA;true;false;null;null
+Elaine Kézia;FAMILIA;true;false;null;null
+Eliene Machado;AMIGO;true;false;null;null
+Ely Enéias Sousa;FAMILIA;true;false;null;null
+Erleide;AMIGO;true;false;null;null
+Esposa Lucas Noeme;OUTRO;true;false;null;null
+Francisco Samuel;FAMILIA;true;false;null;null
+Gabriela Cabral;FAMILIA;true;false;null;null
+Gabriela Cordeiro;AMIGO;true;false;null;null
+Gabriela Lucena;AMIGO;true;false;null;null
+Gabriela Machado;AMIGO;true;false;null;null
+George Barros;FAMILIA;true;false;null;null
+Gerson Menezes;FAMILIA;false;false;null;null
+Gustavo (Ana Beatriz);COLEGA;false;false;null;null
+Herbert Cordeiro;AMIGO;true;false;null;null
+Hilca Barros;FAMILIA;true;false;null;null
+Hilma Souza;FAMILIA;true;false;null;null
+Iane Souza;FAMILIA;true;false;null;null
+Igor Duarte;AMIGO;true;false;null;null
+Ina Mattos;FAMILIA;true;false;null;null
+Isabel Barros;AMIGO;true;false;null;null
+Isabela (Petrus);COLEGA;true;false;null;null
+Isabela Cabral;FAMILIA;false;false;null;null
+Isabelly Damascena;AMIGO;true;false;null;null
+Isis Pinto ;AMIGO;false;false;null;null
+Ismael Souza;FAMILIA;true;false;null;null
+Italo Sousa;FAMILIA;true;false;null;null
+Jean Bauer;AMIGO;true;false;null;null
+Jean Pierre Duarte;COLEGA;true;false;null;null
+Jerri Menezes;FAMILIA;false;false;null;null
+Jheyza Florencio;AMIGO;true;false;null;null
+João Florentino;FAMILIA;true;false;null;null
+João Marcos Florentino;FAMILIA;true;false;null;null
+João Pedro Souza;FAMILIA;true;false;null;null
+Jônathas Souza;FAMILIA;true;false;null;null
+Jorge Pimentel;FAMILIA;true;false;null;null
+Jorge Silva;AMIGO;true;false;null;null
+Josué Florentino;AMIGO;true;false;null;null
+Kassia Fernandes;FAMILIA;false;false;null;null
+Keila Mendonça;AMIGO;true;false;null;null
+Larissa Lisboa;AMIGO;true;false;null;null
+Laura Cabral;FAMILIA;true;false;null;null
+Lays Salgado;AMIGO;true;false;null;null
+Leni Mattos;FAMILIA;true;false;null;null
+Leonardo Rogério;FAMILIA;true;false;null;null
+Lídia Gerôncio;FAMILIA;true;false;null;null
+Loyde Salgado;AMIGO;true;false;null;null
+Lucas Nery;AMIGO;true;false;null;null
+Larissa Nery;AMIGO;true;false;null;null
+Lucas Noeme;FAMILIA;true;false;null;null
+Luci Aurora;FAMILIA;true;false;null;null
+Luiz Cabral;FAMILIA;false;false;null;null
+Luma Guida;FAMILIA;false;false;null;null
+Machado;AMIGO;true;false;null;null
+Magda Figueira;AMIGO;true;false;null;null
+Marcos Barbosa;AMIGO;true;false;null;null
+Marcos Fernandes;FAMILIA;false;false;null;null
+Marina Vilar;AMIGO;true;false;null;null
+Marinalva Silva;COLEGA;true;false;null;null
+Matheus (Ana Lu);AMIGO;true;false;null;null
+Melina (Josue);AMIGO;true;false;null;null
+Mena Cordeiro;AMIGO;true;false;null;null
+Moisés Souza;AMIGO;true;false;null;null
+Murilo Souza;FAMILIA;true;false;null;null
+Nilton Cabral;FAMILIA;true;false;null;null
+Noeme Barbosa;FAMILIA;true;false;null;null
+Paloma Freitas;COLEGA;true;false;null;null
+Patricia (Josué);AMIGO;true;false;null;null
+Patricia Menezes;FAMILIA;false;false;null;null
+Paula Basso;FAMILIA;true;false;null;null
+Paula Santana;FAMILIA;true;false;null;null
+Paulo André;FAMILIA;true;false;null;null
+Pedro (Josue);AMIGO;true;false;null;null
+Petrus Cyrino;AMIGO;true;false;null;null
+Poli Evas;COLEGA;true;false;null;null
+Poliana Dias;AMIGO;true;false;null;null
+Priscila Batista;AMIGO;true;false;null;null
+Priscila Fernandes;FAMILIA;false;false;null;null
+Rafael Almeida;AMIGO;true;false;null;null
+Rafael Almeida Esposa;AMIGO;true;false;null;null
+Rafaella Torreão;AMIGO;true;false;null;null
+Raisa Menezes;FAMILIA;true;false;null;null
+Roberta (Adriano);AMIGO;true;false;null;null
+Robson José (Filho);FAMILIA;true;false;null;null
+Robson José (Pai);FAMILIA;true;false;null;null
+Rodolfo Figueiredo;AMIGO;true;false;null;null
+Rodolfo Allen Namorada;COLEGA;true;false;null;null
+Rodrigo Freitas;COLEGA;true;false;null;null
+Rosangela Cordeiro;AMIGO;true;false;null;null
+Silas Figueira;AMIGO;true;false;null;null
+Solimar Correia;AMIGO;false;false;null;null
+Sulamyta Souza;AMIGO;true;false;null;null
+Tamiris Menezes;FAMILIA;true;false;null;null
+Tarcio Guida;FAMILIA;false;false;null;null
+Thiago Pimentel;AMIGO;true;false;null;null
+Thomás Souza;FAMILIA;true;false;null;null
+Ubyrajara Chamma;AMIGO;true;false;null;null
+Victor Chitunda;AMIGO;true;false;null;null
+Victor Pimentel;FAMILIA;false;false;null;null
+Vinicios Barros;AMIGO;true;false;null;null
+Vivian Pimentel;FAMILIA;true;false;null;null
+Wagner Palácio;AMIGO;true;false;null;null
+Yolanda Catarina;FAMILIA;true;false;null;null
+Yuri Sousa;FAMILIA;true;false;null;null
+Ze Augusto;FAMILIA;true;false;null;null
+Zenaide Barbosa;FAMILIA;true;false;null;null
+Zilla Freitas;COLEGA;true;false;null;null

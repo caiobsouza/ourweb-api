@@ -13,7 +13,7 @@ module.exports = (app) => {
             .catch(err => res.status(500).json(err));
     });
 
-    router.post('/', recaptcha, (req, res) => {
+    router.post('/', recaptcha,  (req, res) => {
         controller.create(req.body)
             .then(invite => res.status(201).json(invite))
             .catch(err => res.status(500).json(err));

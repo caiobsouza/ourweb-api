@@ -42,12 +42,14 @@
     "jwks-rsa": "^1.2.1",
     "mongoose": "^5.0.13",
     "mongoose-dummy": "^1.0.5",
+    "mongoose-seed": "^0.5.1",
     "rewiremock": "^3.7.1",
     "sinon": "^4.5.0",
     "supertest": "^3.0.0",
     "winston": "^3.0.0"
   },
   "devDependencies": {
+    "csvtojson": "^2.0.8",
     "mocha": "^5.1.1",
     "nyc": "^12.0.2"
   }
