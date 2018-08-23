@@ -1,6 +1,7 @@
 # Wedding API
 [![Build Status](https://travis-ci.org/caiobsouza/ourwed-api.svg?branch=master)](https://travis-ci.org/caiobsouza/ourwed-api)
-[![Dependencies status](https://david-dm.org/caiobsouza/ourwed-api.svg)](https://david-dm.org/caiobsouza/ourwed-api)
+[![Dependencies Status](https://david-dm.org/caiobsouza/ourwed-api.svg)](https://david-dm.org/caiobsouza/ourwed-api)
+[![Coverage Status](https://coveralls.io/repos/github/caiobsouza/ourwed-api/badge.svg?branch=master)](https://coveralls.io/github/caiobsouza/ourwed-api?branch=master)
 
 ## Installing
 > npm install

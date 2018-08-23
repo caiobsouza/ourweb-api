@@ -9,9 +9,6 @@ branches:
   - master
 notifications:
   email: false
-before_install:
-- openssl aes-256-cbc -K $encrypted_38266e7cf768_key -iv $encrypted_38266e7cf768_iv
-  -in gae.json.enc -out gae.json -d
 jobs:
   include:
     - stage: Run Tests
@@ -20,7 +17,8 @@ jobs:
       node_js: node
       script: nyc npm test && nyc report --reporter=text-lcov | coveralls
     - stage: Deploy to Google Cloud
-      script: skip
+      script: openssl aes-256-cbc -K $encrypted_38266e7cf768_key -iv $encrypted_38266e7cf768_iv
+              -in gae.json.enc -out gae.json -d
       deploy:
         provider: gae
         project: finn-and-fire-princess
