@@ -11,10 +11,7 @@ notifications:
   email: false
 jobs:
   include:
-    - stage: Run Tests
-      script: npm test
-    - stage: Produce Coverage
-      node_js: node
+    - stage: Run Tests and Produce Coverage
       script: nyc npm test && nyc report --reporter=text-lcov | coveralls
     - stage: Deploy to Google Cloud
       script: openssl aes-256-cbc -K $encrypted_38266e7cf768_key -iv $encrypted_38266e7cf768_iv
