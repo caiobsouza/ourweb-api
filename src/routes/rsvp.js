@@ -1,5 +1,5 @@
 const express = require('express');
-const recaptcha = require('../middlewares/recaptcha');
+const { validateRecaptcha } = require('../middlewares/recaptcha');
 const controller = require('../controllers/rsvp.controller');
 const authorize = require('../middlewares/auth');
 
@@ -13,7 +13,7 @@ module.exports = (app) => {
             .catch(err => res.status(500).json(err));
     });
 
-    router.post('/', recaptcha,  (req, res) => {
+    router.post('/', validateRecaptcha,  (req, res) => {
         controller.create(req.body)
             .then(invite => res.status(201).json(invite))
             .catch(err => res.status(500).json(err));

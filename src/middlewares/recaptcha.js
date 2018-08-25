@@ -11,28 +11,34 @@ const client = axios.create({
     }
 });
 
-module.exports = (req, res, next) => {
-
-    if(process.env.TESTING){
-        next();
-        return;
-    }
-
-    const payload = `secret=${CLIENT_SECRET}&response=${req.body['g-recaptcha-response']}`;
-
-    client.post(`/siteverify?${payload}`, {})
-        .then(response => {
-            if (response.status != 200) {
-                res.status(500).json({ message: 'error calling recaptcha API' });
-                return;
-            }
-
-            if (!response.data.success) {
-                res.status(403).json(response.data);
-                return;
-            }
-
+module.exports = {
+    validateRecaptcha(req, res, next) {
+        if (process.env.TESTING) {
             next();
-        })
-        .catch(err => winston.error(err));
+            return;
+        }
+
+        const payload = this.formatPayload(CLIENT_SECRET, req.body['g-recaptcha-response']);
+
+        client.post(`/siteverify?${payload}`, {})
+            .then(response => {
+                if (response.status != 200) {
+                    res.status(500).json({
+                        message: 'error calling recaptcha API'
+                    });
+                    return;
+                }
+
+                if (!response.data.success) {
+                    res.status(403).json(response.data);
+                    return;
+                }
+
+                next();
+            })
+            .catch(err => winston.error(err));
+    },
+    formatPayload(secret, response) {
+        return `secret=${secret}&response=${response}`;
+    }
 };
