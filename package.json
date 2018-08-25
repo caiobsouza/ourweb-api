@@ -6,10 +6,10 @@
   "scripts": {
     "prestart": "node scripts/get-env",
     "start": "node index",
-    "test": "mocha tests/{models,routes}/*.test.js --recursive --exit",
-    "test:all": "mocha tests/**/*.test.js --recursive -R nyan --exit",
+    "test": "mocha 'tests/{,!(integration)}/*.test.js' --recursive --exit",
+    "test:all": "TESTING=true mocha tests/**/*.test.js --recursive -R nyan --exit",
     "test:integration": "TESTING=true mocha tests/integration/*.test.js --recursive --exit",
-    "test:report": "TESTING=true nyc mocha tests/**/*.test.js --recursive --exit",
+    "test:report": "nyc npm test",
     "deploy:gcloud": "gcloud app deploy --project finn-and-fire-princess",
     "deploy:encrypt-key": "travis encrypt-file gae.json --add"
   },
