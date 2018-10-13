@@ -3,14 +3,17 @@ const recaptchaClient = require('../recaptcha-client');
 
 const CLIENT_SECRET = process.env.RECAPTCHA_SECRET;
 
-module.exports = {
+const recaptcha = {
+    formatPayload(secret, response) {
+        return `secret=${secret}&response=${response}`;
+    },
     validateRecaptcha(req, res, next) {
         if (process.env.TESTING) {
             next();
             return;
         }
 
-        const payload = this.formatPayload(CLIENT_SECRET, req.body['g-recaptcha-response']);
+        const payload = recaptcha.formatPayload(CLIENT_SECRET, req.body['g-recaptcha-response']);
 
         recaptchaClient.post(`/siteverify?${payload}`, {})
             .then(response => {
@@ -29,8 +32,7 @@ module.exports = {
                 next();
             })
             .catch(err => winston.error(err));
-    },
-    formatPayload(secret, response) {
-        return `secret=${secret}&response=${response}`;
     }
 };
+
+module.exports = recaptcha;
