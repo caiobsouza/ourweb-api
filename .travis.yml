@@ -11,14 +11,14 @@ notifications:
   email: false
 jobs:
   include:
-    - stage: Run Tests and Produce Coverage
-      script: nyc npm test && nyc report --reporter=text-lcov | coveralls
-    - stage: Deploy to Heroku
-      deploy:
-        provider: heroku
-        app: our-wedding-api
-        on:
-          repo: caiobsouza/ourwed-api
-          branch: master
-        api_key:
-          secure: pPv2NGjLocmLNMxGuz7tB4PB5+Qi0QwqgqGnOJ8oBVEPm7pLnSkBJSQQE1Qnklbo5hGZEV912MOBg3il+Fr5nPZtW2dA9aFUK9r1lcrXJltcJoPczJEt9+d+CilVRGO1VzdV8oLME9vGP3gEAGI9t24uRJSxocz7GngdcSWAhFfASWHI3bMA4B9fu6X88Pm/d/7xTqkOyZ2QRgDLqN2rdVfdR1I6B8B4UD/V0WiEp/Z7s4CIiD+zkwM1MLEofyeHKfkaWBcu5o73ZheRIFoQcc8Vmgu70ctsKT1ZUI6BAjMK4TAB0Mb4irHMgQpFhsQ8ANrOl5KSxcQLXG979CY6RPBGYVZgqbuLeSdhNYdFQrLuvO7Tn+8ReHoTzNNrGkwyXR0rNMPB+lG8KBMySnHQMx15+zhI96jzpXrN+Sjl5+mim7QlRc8rMeOWXzvXEiXTXPLFB4MrgfF9sshrkAgCsOPzdpfJdnqdkaCSJe4Ep0tIwf1MDcFAl5C7/bVrn3HxDOMyuOXmEi0lZHI7oBODTbjqoGtDM6+WZ0GC4vU5Y6C2x0ju79tp7c3TqSWYmddBh2uxhSUXVQG4hPj9pIKeuG2fR91StDm2Y/0GgG0f9lag+6yibiWMbCqlVDI9rf44Im42siuMAR3rIyqq7VX5h93ka6KUcXv5MG5+zUqWWNA=
+  - stage: Run Tests and Produce Coverage
+    script: nyc npm test && nyc report --reporter=text-lcov | coveralls
+  - stage: Deploy to Heroku
+    deploy:
+      provider: heroku
+      app: our-wedding-api
+      on:
+        repo: caiobsouza/ourwed-api
+        branch: master
+      api_key:
+    secure: ExqOIhTrhVCVAnddeYlzC/NXERRr2ZnWNfYvtl3NHBdpJi6jEtxSU3oIKWq/un7T+PRLV6c5u5rPXaUInotjhJguzMLH4pLw53SaJkU7KljQI4xPVTM/xrzBFmx+17EcqSQo95VfEmyFlYCcS9N01kLigmESYqFS24r/X/6emRPU4vMqpjRRkJS//Yk0neMmpnmWsoU5LsLdMNSgRZsnSWwroCsbx3A1f6dmIzWTGfXDkoU9lzC99iZL9zWR0D/q8zYSLDHFBVLfiey0rZbTD9D4sFXsYyDVbKeNZgi+ZEMvUlBQVqzjwrXga1OX9xx0thtY2IOgq6V9RZxEKjIuXBazeRvVep32GvjYuIr680vf7m3JhbFR55GsYgKdq1DQhrSfIu07JQvsh8DRYFl5CWijMkA0wVxvX+b9s8pVyvNuf08IH8xN7Y7ei0GTuY3gpiZ4wfQ43wxK/dqT4aFGTJO3Ogrn5fSC8ADTeWTSBXIYXtMkqhjrOM7meESB/KzsFXRmutjEO4bAWC8ZPIgsI6GDGoz6dbQl60o3D0f5QqMAo4PpCsFoq3cyeiwrv1lHzwlNq98JTiBVs8fNroLVjJjW1QN/2O/9Ygs5r/94PxLFvLdAJ/ccDFecVKy6QD+x0DNLOlRFCuvtC8wnbpMnbU/npi60+x+U1Gd0sQdni/w=
