@@ -4,7 +4,6 @@
   "description": "our wedding api",
   "main": "index.js",
   "scripts": {
-    "prestart": "node scripts/get-env",
     "start": "node index",
     "test": "mocha 'tests/{,!(integration)}/*.test.js' --recursive --exit",
     "test:all": "TESTING=true mocha tests/**/*.test.js --recursive -R nyan --exit",
