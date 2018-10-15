@@ -42,6 +42,7 @@
     "mongoose": "^5.0.13",
     "mongoose-dummy": "^1.0.5",
     "mongoose-seed": "^0.5.1",
+    "nodemailer": "^4.6.8",
     "rewiremock": "^3.7.1",
     "sinon": "^4.5.0",
     "supertest": "^3.0.0",
